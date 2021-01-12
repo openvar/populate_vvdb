@@ -1,5 +1,7 @@
 import os
 import re
+import sys
+import traceback
 import VariantValidator
 vval = VariantValidator.Validator()
 
@@ -15,7 +17,6 @@ Notes for error fixing.
 3. local variable 'hgnc_symbol' referenced before assignment
 """
 ROOT = os.path.dirname(os.path.abspath(__file__))
-infile = ROOT
 
 # Use pgAdmin4 to download the transcripts table from UTA then replce commas for tabs and remove " characters
 infile = os.path.join(ROOT, 'uta_transcripts.txt')
@@ -33,21 +34,44 @@ with open(infile) as tx_data:
             continue
         if not re.search('.', tx_id):
             continue
-        if 'ENST' in tx_id:
-            continue
 
         print('Updating - ' + tx_id)
         accession = tx_id
         # Look for the accession in our database
         # Connect to database and send request
-        try:
-            vval.update_transcript_record(tx_id)
-            print('True')
-        except BaseException:
-            print('False')
-            fo.write(tx_id + '\n')
+        if 'ENST' not in tx_id:
+            try:
+                vval.update_transcript_record(tx_id)
+                print('True')
+            except BaseException as e:
+                fo.write(tx_id + '\n')
+        else:
+            try:
+                vval.update_transcript_record(tx_id, genome_build='GRCh38', test=True)
+                print('True')
+                exit()
+            except VariantValidator.modules.utils.DatabaseConnectionError:
+                try:
+                    vval.update_transcript_record(tx_id, genome_build='GRCh37', test=True)
+                    print('True')
+                    exit()
+                except BaseException as e:
+                    exc_type, exc_value, last_traceback = sys.exc_info()
+                    print(str(exc_type) + " " + str(exc_value))
+                    traceback.print_tb(last_traceback)
+                    print('False')
+                    exit()
+                    fo.write(tx_id + '\n')
+            except BaseException as e:
+                exc_type, exc_value, last_traceback = sys.exc_info()
+                print(str(exc_type) + " " + str(exc_value))
+                traceback.print_tb(last_traceback)
+                print('False')
+                exit()
+                fo.write(tx_id + '\n')
+
 
 fo.close()
 
 # Update everything else
-vv.update_vv_data()
+vval.update_vv_data()

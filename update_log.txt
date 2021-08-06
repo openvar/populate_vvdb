@@ -1,0 +1,8 @@
+NR_027995.1	Gene information is not available in the RefSeq record. Record potentially deprecated
+NM_001010878.1	Gene information is not available in the RefSeq record. Record potentially deprecated
+NM_001330721.1	The requested transcript was not found in the VVTA database
+NR_073574.1	The requested transcript was not found in the VVTA database
+NM_001318941.1	The requested transcript was not found in the VVTA database
+NR_134486.1	The requested transcript was not found in the VVTA database
+NR_110522.1	The requested transcript was not found in the VVTA database
+NR_157570.1	The requested transcript was not found in the VVTA database

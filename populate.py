@@ -1,8 +1,10 @@
 import os
 import re
 import VariantValidator
+from VariantValidator import update_vv_db
+import add_version_info
+import sys
 vval = VariantValidator.Validator()
-
 
 """
 Notes for error fixing. 
@@ -15,10 +17,27 @@ Notes for error fixing.
 3. local variable 'hgnc_symbol' referenced before assignment
 """
 ROOT = os.path.dirname(os.path.abspath(__file__))
-infile = ROOT
+
+# Check Args
+if len(sys.argv) != 2:
+    print('Too few arguments. The command required is: python populate.py False : Where True/False dictates whether to '
+          'use the uta_transcripts_testing.txt file for testing or the default input file')
+    exit()
+
+testing = sys.argv[1]
+print(testing)
 
 # Use pgAdmin4 to download the transcripts table from UTA then replce commas for tabs and remove " characters
-infile = os.path.join(ROOT, 'uta_transcripts.txt')
+if str(testing) in "False":
+    infile = os.path.join(ROOT, 'uta_transcripts.txt')
+elif str(testing) in "True":
+    infile = os.path.join(ROOT, 'uta_transcripts_testing.txt')
+else:
+    print('Argument 1 must be True or False where use the uta_transcripts_testing.txt file is True or False dictating '
+          'whether to use the uta_transcripts_testing.txt file for testing or the default input file')
+    exit()
+
+# Set log and output files
 logfile = os.path.join(ROOT, 'update_log.txt')
 fo = open(logfile, "w")
 
@@ -33,21 +52,74 @@ with open(infile) as tx_data:
             continue
         if not re.search('.', tx_id):
             continue
-        if 'ENST' in tx_id:
+        if '..' in tx_id:
+            continue
+        if re.search('^U', tx_id):
+            continue
+        if 'NG' in tx_id:
             continue
 
         print('Updating - ' + tx_id)
         accession = tx_id
         # Look for the accession in our database
         # Connect to database and send request
-        try:
-            vval.update_transcript_record(tx_id)
-            print('True')
-        except BaseException:
-            print('False')
-            fo.write(tx_id + '\n')
+        if 'ENST' not in tx_id:
+            try:
+                vval.update_transcript_record(tx_id)
+                print('True')
+            except BaseException as e:
+                print('False')
+                fo.write(tx_id + '\t' + str(e) + '\n')
+                fo.flush()
+                os.fsync(fo.fileno())
+                print(tx_id + '\t' + str(e) + '\n')
+        else:
+            try:
+                vval.update_transcript_record(tx_id, genome_build='GRCh38', test=True)
+                print('True')
+            except VariantValidator.modules.utils.DatabaseConnectionError:
+                try:
+                    vval.update_transcript_record(tx_id, genome_build='GRCh37', test=True)
+                    print('True')
+                except VariantValidator.modules.utils.DatabaseConnectionError:
+                    pass
+                except BaseException as e:
+                    print('False')
+                    fo.write(tx_id + '\t' + str(e) + '\n')
+                    fo.flush()
+                    os.fsync(fo.fileno())
+                    print(tx_id + '\t' + str(e) + '\n')
+            except BaseException as e:
+                print('False')
+                fo.write(tx_id + '\t' + str(e) + '\n')
+                fo.flush()
+                os.fsync(fo.fileno())
+                print(tx_id + '\t' + str(e) + '\n')
 
 fo.close()
+# exit()
 
-# Update everything else
-vv.update_vv_data()
+if str(testing) in "False":
+    # Update everything else
+    update_vv_db.update()
+    add_version_info.update_version()
+
+# Finish
+print("UPDATE COMPLETE: Check update_log for failed transcripts and correct")
+
+# <LICENSE>
+# Copyright (C) 2016-2021 VariantValidator Contributors
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU Affero General Public License as
+# published by the Free Software Foundation, either version 3 of the
+# License, or (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU Affero General Public License for more details.
+#
+# You should have received a copy of the GNU Affero General Public License
+# along with this program.  If not, see <https://www.gnu.org/licenses/>.
+# </LICENSE>

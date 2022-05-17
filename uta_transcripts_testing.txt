@@ -1,4 +1,1 @@
-ac	origin_id	hgnc	cds_start_i	cds_end_i	cds_md5	added	hgnc_id	removed
-
-ENST00000376221.2
-
+NM_000251.1

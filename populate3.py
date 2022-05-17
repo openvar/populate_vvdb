@@ -30,7 +30,7 @@ print(testing)
 
 # Use pgAdmin4 to download the transcripts table from UTA then replce commas for tabs and remove " characters
 if str(testing) in "False":
-    infile = os.path.join(ROOT, 'uta_transcripts.txt')
+    infile = os.path.join(ROOT, 'uta_transcripts3.txt')
 elif str(testing) in "True":
     infile = os.path.join(ROOT, 'uta_transcripts_testing.txt')
 else:
@@ -42,7 +42,7 @@ print("Running file")
 print(infile)
 
 # Set log and output files
-logfile = os.path.join(ROOT, 'update_log.txt')
+logfile = os.path.join(ROOT, 'update_log3.txt')
 fo = open(logfile, "w")
 
 # open file and loop through to populate.py

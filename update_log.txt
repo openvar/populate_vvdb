@@ -1,8 +1,67 @@
-NR_027995.1	Gene information is not available in the RefSeq record. Record potentially deprecated
-NM_001010878.1	Gene information is not available in the RefSeq record. Record potentially deprecated
-NM_001330721.1	The requested transcript was not found in the VVTA database
-NR_073574.1	The requested transcript was not found in the VVTA database
-NM_001318941.1	The requested transcript was not found in the VVTA database
-NR_134486.1	The requested transcript was not found in the VVTA database
-NR_110522.1	The requested transcript was not found in the VVTA database
-NR_157570.1	The requested transcript was not found in the VVTA database
+             ac             
+	Cannot retrieve data from NCBI Entrez for record              ac             
+
+----------------------------
+	Cannot retrieve data from NCBI Entrez for record ----------------------------
+
+ NM_003343.6
+	Cannot retrieve data from NCBI Entrez for record  NM_003343.6
+
+ NM_015833.4
+	Cannot retrieve data from NCBI Entrez for record  NM_015833.4
+
+ NM_001075098.4
+	Cannot retrieve data from NCBI Entrez for record  NM_001075098.4
+
+ NM_003088.4
+	Cannot retrieve data from NCBI Entrez for record  NM_003088.4
+
+ NM_001289.6
+	Cannot retrieve data from NCBI Entrez for record  NM_001289.6
+
+ NM_138973.3
+	Cannot retrieve data from NCBI Entrez for record  NM_138973.3
+
+ NM_001282396.1
+	Cannot retrieve data from NCBI Entrez for record  NM_001282396.1
+
+ NM_001018159.1
+	Cannot retrieve data from NCBI Entrez for record  NM_001018159.1
+
+ NM_001172654.2
+	Cannot retrieve data from NCBI Entrez for record  NM_001172654.2
+
+ NM_001291959.1
+	Cannot retrieve data from NCBI Entrez for record  NM_001291959.1
+
+ NM_007088.3
+	Cannot retrieve data from NCBI Entrez for record  NM_007088.3
+
+ NM_014513.2
+	Cannot retrieve data from NCBI Entrez for record  NM_014513.2
+
+ NM_001134403.1
+	Cannot retrieve data from NCBI Entrez for record  NM_001134403.1
+
+ NM_001289070.1
+	Cannot retrieve data from NCBI Entrez for record  NM_001289070.1
+
+ NM_001193307.1
+	Cannot retrieve data from NCBI Entrez for record  NM_001193307.1
+
+ NM_001135652.2
+	Cannot retrieve data from NCBI Entrez for record  NM_001135652.2
+
+ NM_016826.2
+	Cannot retrieve data from NCBI Entrez for record  NM_016826.2
+
+ NM_001290096.1
+	Cannot retrieve data from NCBI Entrez for record  NM_001290096.1
+
+ NM_001244898.1
+	Cannot retrieve data from NCBI Entrez for record  NM_001244898.1
+
+ NR_038914.1
+	
+ NR_103443.1
+	

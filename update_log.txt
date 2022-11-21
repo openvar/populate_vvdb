@@ -65,3 +65,75 @@
 	
  NR_103443.1
 	
+ NR_027995.1
+	Gene information is not available in the RefSeq record. Record potentially deprecated
+ U14680.1
+	'db_xref'
+ U43746.1
+	'db_xref'
+ NM_178040.3
+	Cannot retrieve data from NCBI Entrez for record  NM_178040.3
+
+ NM_004956.4
+	Cannot retrieve data from NCBI Entrez for record  NM_004956.4
+
+ NM_001304549.1
+	Cannot retrieve data from NCBI Entrez for record  NM_001304549.1
+
+ NM_001300974.1
+	Cannot retrieve data from NCBI Entrez for record  NM_001300974.1
+
+ NM_014209.3
+	Cannot retrieve data from NCBI Entrez for record  NM_014209.3
+
+ NM_014209.2
+	Cannot retrieve data from NCBI Entrez for record  NM_014209.2
+
+ NM_001111077.1
+	Cannot retrieve data from NCBI Entrez for record  NM_001111077.1
+
+ NM_003379.4
+	Cannot retrieve data from NCBI Entrez for record  NM_003379.4
+
+ NM_001101801.1
+	Cannot retrieve data from NCBI Entrez for record  NM_001101801.1
+
+ NM_001101800.1
+	Cannot retrieve data from NCBI Entrez for record  NM_001101800.1
+
+ NM_001006655.2
+	Cannot retrieve data from NCBI Entrez for record  NM_001006655.2
+
+ NM_015398.2
+	Cannot retrieve data from NCBI Entrez for record  NM_015398.2
+
+ NM_173348.1
+	Cannot retrieve data from NCBI Entrez for record  NM_173348.1
+
+ NM_176782.2
+	Cannot retrieve data from NCBI Entrez for record  NM_176782.2
+
+ NM_205548.2
+	Cannot retrieve data from NCBI Entrez for record  NM_205548.2
+
+ NM_032230.2
+	Cannot retrieve data from NCBI Entrez for record  NM_032230.2
+
+ NM_021647.6
+	Cannot retrieve data from NCBI Entrez for record  NM_021647.6
+
+ NM_001301648.1
+	Cannot retrieve data from NCBI Entrez for record  NM_001301648.1
+
+ NM_001301647.1
+	Cannot retrieve data from NCBI Entrez for record  NM_001301647.1
+
+ NM_001171811.1
+	local variable 'hgnc_data' referenced before assignment
+ NM_000157.3
+	local variable 'hgnc_data' referenced before assignment
+ NM_001010878.1
+	Gene information is not available in the RefSeq record. Record potentially deprecated
+(423133 rows)
+	Cannot retrieve data from NCBI Entrez for record (423133 rows)
+

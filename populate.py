@@ -19,12 +19,13 @@ Notes for error fixing.
 ROOT = os.path.dirname(os.path.abspath(__file__))
 
 # Check Args
-if len(sys.argv) != 2:
-    print('Too few arguments. The command required is: python populate.py False : Where True/False dictates whether to '
-          'use the uta_transcripts_testing.txt file for testing or the default input file')
+if len(sys.argv) != 3:
+    print('Too few arguments. The command required is: python populate.py False all: Where True/False dictates whether to '
+          'use the uta_transcripts_testing.txt file for testing or the default input file and All is one of all, ensembl or refseq')
     exit()
 
 testing = sys.argv[1]
+transcript_set = sys.argv[2]
 print(testing)
 
 # Use pgAdmin4 to download the transcripts table from UTA then replce commas for tabs and remove " characters
@@ -35,6 +36,10 @@ elif str(testing) in "True":
 else:
     print('Argument 1 must be True or False where use the uta_transcripts_testing.txt file is True or False dictating '
           'whether to use the uta_transcripts_testing.txt file for testing or the default input file')
+    exit()
+
+if str(transcript_set) not in ["all", "ensembl", "refseq"]:
+    print('Argument 2 must be all, ensembl or refseq to select a specific transcript set or not')
     exit()
 
 # Set log and output files
@@ -60,10 +65,13 @@ with open(infile) as tx_data:
             continue
 
         print('Updating - ' + tx_id)
-        accession = tx_id
+        accession = tx_id.strip()
         # Look for the accession in our database
         # Connect to database and send request
         if 'ENST' not in tx_id:
+            if transcript_set == "ensembl":
+                print("Bypass")
+                continue
             try:
                 vval.update_transcript_record(tx_id)
                 print('True')
@@ -74,6 +82,9 @@ with open(infile) as tx_data:
                 os.fsync(fo.fileno())
                 print(tx_id + '\t' + str(e) + '\n')
         else:
+            if transcript_set == "refseq":
+                print("Bypass")
+                continue
             try:
                 vval.update_transcript_record(tx_id, genome_build='GRCh38', test=True)
                 print('True')
@@ -81,8 +92,12 @@ with open(infile) as tx_data:
                 try:
                     vval.update_transcript_record(tx_id, genome_build='GRCh37', test=True)
                     print('True')
-                except VariantValidator.modules.utils.DatabaseConnectionError:
-                    pass
+                except VariantValidator.modules.utils.DatabaseConnectionError as e:
+                    print('False')
+                    fo.write(tx_id + '\t' + str(e) + '\n')
+                    fo.flush()
+                    os.fsync(fo.fileno())
+                    print(tx_id + '\t' + str(e) + '\n')
                 except BaseException as e:
                     print('False')
                     fo.write(tx_id + '\t' + str(e) + '\n')
@@ -97,7 +112,6 @@ with open(infile) as tx_data:
                 print(tx_id + '\t' + str(e) + '\n')
 
 fo.close()
-# exit()
 
 if str(testing) in "False":
     # Update everything else

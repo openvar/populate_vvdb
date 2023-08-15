@@ -1,139 +1,32 @@
-             ac             
-	Cannot retrieve data from NCBI Entrez for record              ac             
-
-----------------------------
-	Cannot retrieve data from NCBI Entrez for record ----------------------------
-
- NM_003343.6
-	Cannot retrieve data from NCBI Entrez for record  NM_003343.6
-
- NM_015833.4
-	Cannot retrieve data from NCBI Entrez for record  NM_015833.4
-
- NM_001075098.4
-	Cannot retrieve data from NCBI Entrez for record  NM_001075098.4
-
- NM_003088.4
-	Cannot retrieve data from NCBI Entrez for record  NM_003088.4
-
- NM_001289.6
-	Cannot retrieve data from NCBI Entrez for record  NM_001289.6
-
- NM_138973.3
-	Cannot retrieve data from NCBI Entrez for record  NM_138973.3
-
- NM_001282396.1
-	Cannot retrieve data from NCBI Entrez for record  NM_001282396.1
-
- NM_001018159.1
-	Cannot retrieve data from NCBI Entrez for record  NM_001018159.1
-
- NM_001172654.2
-	Cannot retrieve data from NCBI Entrez for record  NM_001172654.2
-
- NM_001291959.1
-	Cannot retrieve data from NCBI Entrez for record  NM_001291959.1
-
- NM_007088.3
-	Cannot retrieve data from NCBI Entrez for record  NM_007088.3
-
- NM_014513.2
-	Cannot retrieve data from NCBI Entrez for record  NM_014513.2
-
- NM_001134403.1
-	Cannot retrieve data from NCBI Entrez for record  NM_001134403.1
-
- NM_001289070.1
-	Cannot retrieve data from NCBI Entrez for record  NM_001289070.1
-
- NM_001193307.1
-	Cannot retrieve data from NCBI Entrez for record  NM_001193307.1
-
- NM_001135652.2
-	Cannot retrieve data from NCBI Entrez for record  NM_001135652.2
-
- NM_016826.2
-	Cannot retrieve data from NCBI Entrez for record  NM_016826.2
-
- NM_001290096.1
-	Cannot retrieve data from NCBI Entrez for record  NM_001290096.1
-
- NM_001244898.1
-	Cannot retrieve data from NCBI Entrez for record  NM_001244898.1
-
- NR_038914.1
+ENST00000537546.1
 	
- NR_103443.1
+ENST00000539547.1
 	
- NR_027995.1
-	Gene information is not available in the RefSeq record. Record potentially deprecated
- U14680.1
-	'db_xref'
- U43746.1
-	'db_xref'
- NM_178040.3
-	Cannot retrieve data from NCBI Entrez for record  NM_178040.3
-
- NM_004956.4
-	Cannot retrieve data from NCBI Entrez for record  NM_004956.4
-
- NM_001304549.1
-	Cannot retrieve data from NCBI Entrez for record  NM_001304549.1
-
- NM_001300974.1
-	Cannot retrieve data from NCBI Entrez for record  NM_001300974.1
-
- NM_014209.3
-	Cannot retrieve data from NCBI Entrez for record  NM_014209.3
-
- NM_014209.2
-	Cannot retrieve data from NCBI Entrez for record  NM_014209.2
-
- NM_001111077.1
-	Cannot retrieve data from NCBI Entrez for record  NM_001111077.1
-
- NM_003379.4
-	Cannot retrieve data from NCBI Entrez for record  NM_003379.4
-
- NM_001101801.1
-	Cannot retrieve data from NCBI Entrez for record  NM_001101801.1
-
- NM_001101800.1
-	Cannot retrieve data from NCBI Entrez for record  NM_001101800.1
-
- NM_001006655.2
-	Cannot retrieve data from NCBI Entrez for record  NM_001006655.2
-
- NM_015398.2
-	Cannot retrieve data from NCBI Entrez for record  NM_015398.2
-
- NM_173348.1
-	Cannot retrieve data from NCBI Entrez for record  NM_173348.1
-
- NM_176782.2
-	Cannot retrieve data from NCBI Entrez for record  NM_176782.2
-
- NM_205548.2
-	Cannot retrieve data from NCBI Entrez for record  NM_205548.2
-
- NM_032230.2
-	Cannot retrieve data from NCBI Entrez for record  NM_032230.2
-
- NM_021647.6
-	Cannot retrieve data from NCBI Entrez for record  NM_021647.6
-
- NM_001301648.1
-	Cannot retrieve data from NCBI Entrez for record  NM_001301648.1
-
- NM_001301647.1
-	Cannot retrieve data from NCBI Entrez for record  NM_001301647.1
-
- NM_001171811.1
-	local variable 'hgnc_data' referenced before assignment
- NM_000157.3
-	local variable 'hgnc_data' referenced before assignment
- NM_001010878.1
-	Gene information is not available in the RefSeq record. Record potentially deprecated
-(423133 rows)
-	Cannot retrieve data from NCBI Entrez for record (423133 rows)
-
+ENST00000540049.1
+	
+ENST00000545850.1
+	
+ENST00000537288.1
+	
+ENST00000394240.3
+	
+ENST00000543404.1
+	
+ENST00000544183.1
+	
+ENST00000545343.1
+	
+ENST00000566278.2
+	
+ENST00000330379.5
+	
+ENST00000442999.3
+	
+ENST00000249005.2
+	
+ENST00000381278.3
+	
+ENST00000401850.1
+	
+ENST00000465765.2
+	

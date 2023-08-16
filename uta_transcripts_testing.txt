@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 NM_001414411.1
 	The requested transcript was not found in the VVTA database
 NM_001396011.1
@@ -9422,3 +9423,13 @@ NM_001010878.1
 	Gene information is not available in the RefSeq record. Record potentially deprecated
 NM_001410962.1
 	The requested transcript was not found in the VVTA database
+=======
+ENST00000368576.7
+ENST00000263100.8
+ENST00000373997.8
+ENST00000318602.12
+ENST00000299698.12
+ENST00000249005.3
+ENST00000357654.9
+
+>>>>>>> de7a2ccd9b8fbde658e2bbfc026d47be3283f6fa

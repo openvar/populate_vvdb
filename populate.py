@@ -5,6 +5,7 @@ from VariantValidator import update_vv_db
 import add_version_info
 import sys
 vval = VariantValidator.Validator()
+import traceback
 
 """
 Notes for error fixing. 
@@ -81,6 +82,7 @@ with open(infile) as tx_data:
                 fo.flush()
                 os.fsync(fo.fileno())
                 print(tx_id + '\t' + str(e) + '\n')
+                traceback.print_exc()
         else:
             if transcript_set == "refseq":
                 print("Bypass")
@@ -98,18 +100,21 @@ with open(infile) as tx_data:
                     fo.flush()
                     os.fsync(fo.fileno())
                     print(tx_id + '\t' + str(e) + '\n')
+                    traceback.print_exc()
                 except BaseException as e:
                     print('False')
                     fo.write(tx_id + '\t' + str(e) + '\n')
                     fo.flush()
                     os.fsync(fo.fileno())
                     print(tx_id + '\t' + str(e) + '\n')
+                    traceback.print_exc()
             except BaseException as e:
                 print('False')
                 fo.write(tx_id + '\t' + str(e) + '\n')
                 fo.flush()
                 os.fsync(fo.fileno())
                 print(tx_id + '\t' + str(e) + '\n')
+                traceback.print_exc()
 
 fo.close()
 

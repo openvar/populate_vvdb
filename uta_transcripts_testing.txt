@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 NM_001414411.1
 	The requested transcript was not found in the VVTA database
 NM_001396011.1
@@ -9433,3 +9432,7 @@ ENST00000249005.3
 ENST00000357654.9
 
 >>>>>>> de7a2ccd9b8fbde658e2bbfc026d47be3283f6fa
+=======
+ENST00000361899.2
+ENST00000305877.13
+>>>>>>> 71aadf35ca4e7294c95184ee50cc966cc7c5a16d

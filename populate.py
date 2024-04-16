@@ -48,7 +48,6 @@ def process_transcript(tx_id):
         return
 
     print('Updating - ' + tx_id)
-    accession = tx_id.strip()
 
     if 'ENST' not in tx_id:
         if transcript_set == "ensembl":

@@ -6,6 +6,7 @@ import add_version_info
 import sys
 import traceback
 from concurrent.futures import ProcessPoolExecutor
+from multiprocessing import freeze_support
 
 vval = VariantValidator.Validator()
 ROOT = os.path.dirname(os.path.abspath(__file__))
@@ -35,7 +36,8 @@ def check_args():
 
     return testing, transcript_set, infile
 
-def process_transcript(tx_id):
+def process_transcript(args):
+    tx_id, transcript_set = args
     if tx_id == 'ac':
         return
     if not re.search('.', tx_id):
@@ -96,22 +98,28 @@ def process_transcript(tx_id):
             print(tx_id + '\t' + str(e) + '\n')
             traceback.print_exc()
 
-testing, transcript_set, infile = check_args()
+def main():
+    testing, transcript_set, infile = check_args()
 
-logfile = os.path.join(ROOT, 'update_log.txt')
-fo = open(logfile, "w")
+    logfile = os.path.join(ROOT, 'update_log.txt')
+    fo = open(logfile, "w")
 
-with open(infile) as tx_data, ProcessPoolExecutor(max_workers=4) as executor:
-    tx_ids = (tx_line.split('\t')[0] for tx_line in tx_data)
-    executor.map(process_transcript, tx_ids)
+    with open(infile) as tx_data, ProcessPoolExecutor(max_workers=4) as executor:
+        tx_ids = ((tx_line.split('\t')[0], transcript_set) for tx_line in tx_data)
+        executor.map(process_transcript, tx_ids)
 
-fo.close()
+    fo.close()
 
-if str(testing) in "False":
-    update_vv_db.update()
-    add_version_info.update_version()
+    if str(testing) in "False":
+        update_vv_db.update()
+        add_version_info.update_version()
 
-print("UPDATE COMPLETE: Check update_log for failed transcripts and correct")
+    print("UPDATE COMPLETE: Check update_log for failed transcripts and correct")
+
+
+if __name__ == '__main__':
+    freeze_support()
+    main()
 
 # <LICENSE>
 # Copyright (C) 2016-2021 VariantValidator Contributors

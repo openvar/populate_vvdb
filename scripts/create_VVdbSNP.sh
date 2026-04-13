@@ -1,10 +1,39 @@
 #!/bin/bash
 set -euo pipefail
 
-# ---- Settings ----
+# ============================================================
+# VariantValidator dbSNP Builder
+# Option B: If final BCF exists, skip EVERYTHING.
+# Plus: Clean up all intermediate files (.gz, .tbi, .metadata, .csi)
+# ============================================================
+
 BASE_URL="https://ftp.ncbi.nih.gov/snp/latest_release/VCF"
 GRCH37_VCF="GCF_000001405.25.gz"
 GRCH38_VCF="GCF_000001405.40.gz"
+
+# ---- Helper: Cleanup intermediate files ----
+cleanup_intermediates() {
+    echo "🧹 Cleaning up intermediate dbSNP files..."
+
+    rm -f GCF_*.gz
+    rm -f GCF_*.tbi
+    rm -f GCF_*_metadata.txt
+    rm -f vvdbSNP_*.bcf.csi
+
+    echo "✔ Cleanup complete (kept only final BCF files)."
+}
+
+# ---- Check for final BCF files ----
+HAS37=$(ls vvdbSNP_GRCh37_b*.bcf 2>/dev/null || true)
+HAS38=$(ls vvdbSNP_GRCh38_b*.bcf 2>/dev/null || true)
+
+if [[ -n "$HAS37" && -n "$HAS38" ]]; then
+    echo "⏩ Final dbSNP BCF files already exist. Skipping entire dbSNP build."
+    cleanup_intermediates
+    exit 0
+fi
+
+echo "⚠️  Final dbSNP BCF files not found. Proceeding with full build..."
 
 process_build () {
 
@@ -51,7 +80,7 @@ process_build () {
 
     OUT="vvdbSNP_${ASM}_b${BUILD}_${FILEDATE}.bcf"
 
-    # ---- Step 5: Skip if already exists ----
+    # ---- Step 5: Skip BCF creation if it exists ----
     if [[ -f "$OUT" ]]; then
         echo "⏩ Skipping: $OUT already exists"
         return
@@ -65,6 +94,8 @@ process_build () {
         | bcftools view -Ob -o "$OUT"
 
     # ---- Step 7: Index the BCF ----
+    # We build the .csi so bcftools operations are valid.
+    # It will be deleted later during cleanup.
     echo "📚 Indexing minimal BCF..."
     bcftools index "$OUT"
 
@@ -75,4 +106,8 @@ process_build () {
 process_build "$GRCH37_VCF"
 process_build "$GRCH38_VCF"
 
-echo "🎉 All done"
+# ---- Cleanup intermediate files ----
+cleanup_intermediates
+
+echo "🎉 All done (final BCFs retained, everything else removed)"
+

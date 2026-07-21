@@ -1,0 +1,2 @@
+UPDATE transcript_info
+SET updated = NOW();

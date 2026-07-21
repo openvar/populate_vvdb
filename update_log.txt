@@ -1,0 +1,10 @@
+ENST00000611738.5	Cannot retrieve data from Ensembl REST for record ENST00000611738.5
+ENST00000617744.5	Cannot retrieve data from Ensembl REST for record ENST00000617744.5
+ENST00000616074.5	Cannot retrieve data from Ensembl REST for record ENST00000616074.5
+ENST00000630217.2	Cannot retrieve data from Ensembl REST for record ENST00000630217.2
+ENST00000635846.2	Cannot retrieve data from Ensembl REST for record ENST00000635846.2
+ENST00000711151.2	Cannot retrieve data from Ensembl REST for record ENST00000711151.2
+ENST00000711168.2	Cannot retrieve data from Ensembl REST for record ENST00000711168.2
+ENST00000711174.2	Cannot retrieve data from Ensembl REST for record ENST00000711174.2
+ENST00000711230.2	Cannot retrieve data from Ensembl REST for record ENST00000711230.2
+ENST00000711233.2	Cannot retrieve data from Ensembl REST for record ENST00000711233.2

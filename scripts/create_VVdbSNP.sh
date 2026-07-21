@@ -4,7 +4,8 @@ set -euo pipefail
 # ============================================================
 # VariantValidator dbSNP Builder
 # Option B: If final BCF exists, skip EVERYTHING.
-# Plus: Clean up all intermediate files (.gz, .tbi, .metadata, .csi)
+# Plus: Clean up all intermediate files
+# (BUT keep .bcf and .bcf.csi — both are now required)
 # ============================================================
 
 BASE_URL="https://ftp.ncbi.nih.gov/snp/latest_release/VCF"
@@ -18,9 +19,9 @@ cleanup_intermediates() {
     rm -f GCF_*.gz
     rm -f GCF_*.tbi
     rm -f GCF_*_metadata.txt
-    rm -f vvdbSNP_*.bcf.csi
+    # NOTE: Do NOT remove vvdbSNP_*.bcf.csi anymore
 
-    echo "✔ Cleanup complete (kept only final BCF files)."
+    echo "✔ Cleanup complete (final BCF + CSI retained)."
 }
 
 # ---- Check for final BCF files ----
@@ -93,9 +94,7 @@ process_build () {
         | bcftools annotate -x INFO,FORMAT \
         | bcftools view -Ob -o "$OUT"
 
-    # ---- Step 7: Index the BCF ----
-    # We build the .csi so bcftools operations are valid.
-    # It will be deleted later during cleanup.
+    # ---- Step 7: Index the BCF (REQUIRED) ----
     echo "📚 Indexing minimal BCF..."
     bcftools index "$OUT"
 
@@ -109,5 +108,4 @@ process_build "$GRCH38_VCF"
 # ---- Cleanup intermediate files ----
 cleanup_intermediates
 
-echo "🎉 All done (final BCFs retained, everything else removed)"
-
+echo "🎉 All done (final BCFs + CSI retained)"

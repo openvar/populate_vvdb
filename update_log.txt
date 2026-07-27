@@ -1,10 +1,101 @@
-ENST00000611738.5	Cannot retrieve data from Ensembl REST for record ENST00000611738.5
-ENST00000617744.5	Cannot retrieve data from Ensembl REST for record ENST00000617744.5
-ENST00000616074.5	Cannot retrieve data from Ensembl REST for record ENST00000616074.5
-ENST00000630217.2	Cannot retrieve data from Ensembl REST for record ENST00000630217.2
-ENST00000635846.2	Cannot retrieve data from Ensembl REST for record ENST00000635846.2
-ENST00000711151.2	Cannot retrieve data from Ensembl REST for record ENST00000711151.2
-ENST00000711168.2	Cannot retrieve data from Ensembl REST for record ENST00000711168.2
-ENST00000711174.2	Cannot retrieve data from Ensembl REST for record ENST00000711174.2
-ENST00000711230.2	Cannot retrieve data from Ensembl REST for record ENST00000711230.2
-ENST00000711233.2	Cannot retrieve data from Ensembl REST for record ENST00000711233.2
+NM_001003799.2	The requested transcript was not found in the VVTA database
+NM_001010878.1	Gene information is not available in the RefSeq record. Record potentially deprecated
+NM_001162371.3	The requested transcript was not found in the VVTA database
+NM_001162371.3	The requested transcript was not found in the VVTA database
+NM_001320038.2	The requested transcript was not found in the VVTA database
+NM_001323075.3	The requested transcript was not found in the VVTA database
+NM_001352000.1	The requested transcript was not found in the VVTA database
+NM_001360171.2	The requested transcript was not found in the VVTA database
+NM_001365304.2	The requested transcript was not found in the VVTA database
+NM_001370368.2	The requested transcript was not found in the VVTA database
+NM_001370414.1	The requested transcript was not found in the VVTA database
+NM_001370704.1	The requested transcript was not found in the VVTA database
+NM_001375657.2	The requested transcript was not found in the VVTA database
+NM_001395872.1	The requested transcript was not found in the VVTA database
+NM_001395917.1	The requested transcript was not found in the VVTA database
+NM_001395920.1	The requested transcript was not found in the VVTA database
+NM_001395962.1	The requested transcript was not found in the VVTA database
+NM_001395976.1	The requested transcript was not found in the VVTA database
+NM_001395979.2	The requested transcript was not found in the VVTA database
+NM_001395982.1	The requested transcript was not found in the VVTA database
+NM_001396008.1	The requested transcript was not found in the VVTA database
+NM_001396016.1	The requested transcript was not found in the VVTA database
+NM_001405530.2	The requested transcript was not found in the VVTA database
+NM_001414695.1	The requested transcript was not found in the VVTA database
+NM_001414702.1	The requested transcript was not found in the VVTA database
+NM_001414704.1	The requested transcript was not found in the VVTA database
+NM_001414722.1	The requested transcript was not found in the VVTA database
+NM_001414725.1	The requested transcript was not found in the VVTA database
+NM_001414727.1	The requested transcript was not found in the VVTA database
+NM_001414729.1	The requested transcript was not found in the VVTA database
+NM_001414736.1	The requested transcript was not found in the VVTA database
+NM_001414731.1	The requested transcript was not found in the VVTA database
+NM_001414738.1	The requested transcript was not found in the VVTA database
+NM_001414892.1	The requested transcript was not found in the VVTA database
+NM_001414739.1	The requested transcript was not found in the VVTA database
+NM_001414893.1	The requested transcript was not found in the VVTA database
+NM_001414895.1	The requested transcript was not found in the VVTA database
+NM_001414897.1	The requested transcript was not found in the VVTA database
+NM_001414898.1	The requested transcript was not found in the VVTA database
+NM_001414901.1	The requested transcript was not found in the VVTA database
+NM_001414902.1	The requested transcript was not found in the VVTA database
+NM_001414935.1	The requested transcript was not found in the VVTA database
+NM_001414942.1	The requested transcript was not found in the VVTA database
+NM_001414965.1	The requested transcript was not found in the VVTA database
+NM_001414947.1	The requested transcript was not found in the VVTA database
+NM_001414991.1	The requested transcript was not found in the VVTA database
+NM_001414998.1	The requested transcript was not found in the VVTA database
+NM_001415000.1	The requested transcript was not found in the VVTA database
+NM_001415001.1	The requested transcript was not found in the VVTA database
+NM_001415059.2	The requested transcript was not found in the VVTA database
+NM_001416403.1	The requested transcript was not found in the VVTA database
+NR_027995.1	Gene information is not available in the RefSeq record. Record potentially deprecated
+NM_001162371.3	The requested transcript was not found in the VVTA database
+NM_001320038.2	The requested transcript was not found in the VVTA database
+NM_001003799.2	The requested transcript was not found in the VVTA database
+NM_001323075.3	The requested transcript was not found in the VVTA database
+NM_001352000.1	The requested transcript was not found in the VVTA database
+NM_001360171.2	The requested transcript was not found in the VVTA database
+NM_001365304.2	The requested transcript was not found in the VVTA database
+NM_001370368.2	The requested transcript was not found in the VVTA database
+NM_001370414.1	The requested transcript was not found in the VVTA database
+NM_001370704.1	The requested transcript was not found in the VVTA database
+NM_001375657.2	The requested transcript was not found in the VVTA database
+NM_001395872.1	The requested transcript was not found in the VVTA database
+NM_001395917.1	The requested transcript was not found in the VVTA database
+NM_001395920.1	The requested transcript was not found in the VVTA database
+NM_001395962.1	The requested transcript was not found in the VVTA database
+NM_001395976.1	The requested transcript was not found in the VVTA database
+NM_001395979.2	The requested transcript was not found in the VVTA database
+NM_001395982.1	The requested transcript was not found in the VVTA database
+NM_001396008.1	The requested transcript was not found in the VVTA database
+NM_001396016.1	The requested transcript was not found in the VVTA database
+NM_001405530.2	The requested transcript was not found in the VVTA database
+NM_001414695.1	The requested transcript was not found in the VVTA database
+NM_001414702.1	The requested transcript was not found in the VVTA database
+NM_001414704.1	The requested transcript was not found in the VVTA database
+NM_001414722.1	The requested transcript was not found in the VVTA database
+NM_001414725.1	The requested transcript was not found in the VVTA database
+NM_001414727.1	The requested transcript was not found in the VVTA database
+NM_001414729.1	The requested transcript was not found in the VVTA database
+NM_001414731.1	The requested transcript was not found in the VVTA database
+NM_001414736.1	The requested transcript was not found in the VVTA database
+NM_001414738.1	The requested transcript was not found in the VVTA database
+NM_001414739.1	The requested transcript was not found in the VVTA database
+NM_001414892.1	The requested transcript was not found in the VVTA database
+NM_001414893.1	The requested transcript was not found in the VVTA database
+NM_001414895.1	The requested transcript was not found in the VVTA database
+NM_001414897.1	The requested transcript was not found in the VVTA database
+NM_001414898.1	The requested transcript was not found in the VVTA database
+NM_001414935.1	The requested transcript was not found in the VVTA database
+NM_001414902.1	The requested transcript was not found in the VVTA database
+NM_001414901.1	The requested transcript was not found in the VVTA database
+NM_001414942.1	The requested transcript was not found in the VVTA database
+NM_001414947.1	The requested transcript was not found in the VVTA database
+NM_001414965.1	The requested transcript was not found in the VVTA database
+NM_001415000.1	The requested transcript was not found in the VVTA database
+NM_001414991.1	The requested transcript was not found in the VVTA database
+NM_001414998.1	The requested transcript was not found in the VVTA database
+NM_001415001.1	The requested transcript was not found in the VVTA database
+NM_001416403.1	The requested transcript was not found in the VVTA database
+NM_001415059.2	The requested transcript was not found in the VVTA database

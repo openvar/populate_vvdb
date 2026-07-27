@@ -240,7 +240,7 @@ def main():
     testing, transcript_set, infile = check_args()
 
     with open(infile) as tx_data, ProcessPoolExecutor(
-            max_workers=5,
+            max_workers=3,
             initializer=init_worker,
     ) as executor:
         tx_ids = ((tx_line.split("\t")[0], transcript_set) for tx_line in tx_data)

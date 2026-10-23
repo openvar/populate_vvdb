@@ -229,13 +229,6 @@ def main():
     with open(LOGFILE, "w"):
         pass
 
-    # # ---- dbSNP pipeline ----
-    # run_dbsnp_prebuild()
-    # build_flat_dbsnp()
-    #
-    # # ---- deliberate hard stop (INTENTIONAL) ----
-    # sys.exit(0)
-
     # ---- transcript pipeline (UNCHANGED, UNREACHABLE) ----
     testing, transcript_set, infile = check_args()
 
